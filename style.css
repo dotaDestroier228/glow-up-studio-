@@ -1,0 +1,614 @@
+:root {     
+    --pink:#FFB6C1;     
+    --grey: #C0C0C0;     
+    --dark: #000000;     
+    --white: #F7F7FB; 
+    --pink-logo: #F4E3DC;
+    --red-pink: #ff99aa;
+    --new-head_text: #554441;
+}  
+
+* {       
+    margin: 0;       
+    padding: 0;       
+    box-sizing: border-box;    
+}  
+
+html {     
+    scroll-padding: 120px;     
+    scroll-behavior: smooth; 
+}  
+
+body {     
+    font-family: "DM Sans", sans-serif; 
+    background-color: var(--white);
+    color: var(--dark);
+    overflow-x: hidden; /* Запрещает горизонтальный скролл на телефонах */
+    width: 100%;
+}  
+
+/* --- ШАПКА (HEADER) --- */
+.head {     
+    padding-block: 10px;     
+    position: fixed;     
+    width: 100%;     
+    z-index: 999; 
+    background-color: var(--pink-logo); 
+    backdrop-filter: blur(10px); 
+}  
+
+.head__container {     
+    display: flex;     
+    justify-content: space-between;     
+    align-items: center;     
+    padding-inline: 20px;     
+    max-width: 1200px;
+    margin: 0 auto;
+}  
+
+.head__image {     
+    max-width: 100px;     
+    border-radius: 10px; 
+}  
+
+.head__menu {     
+    display: flex;     
+    gap: 40px; 
+}  
+
+.head__menu a {     
+    text-decoration: none;     
+    color: var(--new-head_text);     
+    transition: color 0.3s ease; 
+    font-weight: 500;
+    font-size: 16px; 
+}  
+
+.head__menu a:hover {     
+    color: var(--dark); 
+}  
+
+.head__button {     
+    font-weight: 700;    
+    font-size: 16px;    
+    padding: 12px 30px;    
+    border-radius: 10px;    
+    border: none;
+    transition: all 0.3s ease;   
+    background: var(--pink);   
+    font-family: "DM Sans", sans-serif;   
+    color: var(--dark); 
+    text-align: center;
+    cursor: pointer;
+}  
+
+.head__button:hover {     
+    background-color: var(--red-pink); 
+}  
+
+/* --- ГЛАВНЫЙ ЭКРАН --- */
+.vstupa {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    background-color: var(--grey);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding-inline: 40px;
+    border-bottom: 5px solid var(--dark);
+}
+
+.vstupa::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 182, 193, 0.45) 0%, rgba(255, 182, 193, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+    filter: blur(120px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.vstupa__container {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+    width: 100%;
+}
+
+.vstupa__title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+
+.vstupa__desc {
+    font-family: "Mulish", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #444444;
+    margin-bottom: 30px;
+}
+
+.vstupa__button-deko {
+    border: none;
+    background: none;
+    margin-bottom: 25px;
+}
+
+.vstupa__button {
+    display: inline-block;
+    padding: 16px 45px;
+    background-color: var(--pink);
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.vstupa__button:hover {
+    background-color: var(--red-pink);
+}
+
+.vstupa__contakt {
+    color: var(--new-head_text);
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
+}
+
+.vstupa__contakt a {
+    color: var(--new-head_text);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+.vstupa__video {     
+    position: relative;
+    z-index: 2;
+    background: var(--pink); 
+    padding: 15px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px; 
+    justify-self: center;
+    box-shadow: 0 20px 50px rgba(255, 182, 193, 0.3);
+}  
+
+.vstupa__video video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- ПЛИТКИ МИНИ-КАТАЛОГА --- */
+.vstupa__catalog {
+    grid-column: span 2;
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px auto 0 auto;
+    display: flex;
+    gap: 30px;
+}
+
+.vstupa__catalog-item {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.vstupa__catalog-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.vstupa__catalog-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.vstupa__catalog-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.vstupa__catalog-button {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--dark);
+    text-decoration: none;
+    background-color: var(--pink-logo);
+    padding: 12px 35px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.vstupa__catalog-button:hover {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+/* --- МАСТЕРА (INFO) --- */
+.info {
+    padding-inline: 20px;
+}
+
+.info__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info__Anna, .info__Tanya {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding-block: 60px;
+}
+
+.info__Tanya {
+   border-top: 5px dashed var(--dark);
+   border-bottom: 5px solid var(--dark);
+}
+
+.info__portret {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.info__name {
+    font-family: "Mulish", sans-serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.info__cont {
+    margin-bottom: 20px;
+}
+
+.info__cont a, .info__cont p {
+    font-family: "Montserrat", sans-serif;
+    color: var(--new-head_text);
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.info__cont a {
+    margin-right: 20px;
+}
+
+.info__cont a:hover {
+    color: var(--red-pink);
+}
+
+.info__bio {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* --- БЛОК СЦОСЕТЕЙ (CONTACT) --- */
+.contact {
+    background: var(--pink);
+    border-bottom: 5px solid var(--dark);
+    padding-inline: 20px;
+}
+
+.contact__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact__content { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    padding-block: 60px;
+    gap: 30px;    
+}
+
+.contact__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact__img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px; 
+    border-radius: 50%;
+}
+
+.contact__text a {
+    color: var(--new-head_text);
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    word-break: break-all;
+}
+
+/* --- КАРТЫ --- */
+.geoloc {
+   border-bottom: 5px solid var(--dark);
+   width: 100%;
+}
+
+.geoloc__vidget {
+    width: 100%;
+    height: 500px;
+}
+
+/* --- КАК ЗАПИСАТЬСЯ (ORG) --- */
+.org {
+    background: var(--pink);
+    padding: 60px 20px;
+}
+
+.org__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.org__title {
+    font-family: "Mulish", sans-serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.org__title-mini {
+    font-family: "Mulish", sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.org__text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.org__two {
+    color: var(--new-head_text);
+    font-weight: 700;
+}
+
+/* --- КАТАЛОГ С ЦЕНАМИ И ВКЛАДКАМИ --- */
+.catalog-section { 
+    padding: 60px 20px; 
+    background-color: #ffffff; 
+}
+
+.catalog-container { 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.service-block { 
+    margin-bottom: 40px; 
+    padding: 30px; 
+    border: 1px solid #fce4ec; 
+    border-radius: 20px; 
+    background: #ffffff; 
+    box-shadow: 0 10px 30px rgba(252, 228, 236, 0.3); 
+}
+
+.service-block h2 { 
+    color: #880e4f; 
+    margin-bottom: 25px; 
+    font-weight: 500; 
+    font-family: "Mulish", sans-serif;
+}
+
+.tabs-header { 
+    display: flex; 
+    gap: 20px; 
+    margin-bottom: 25px; 
+    border-bottom: 2px solid #fce4ec; 
+}
+
+.tab-btn { 
+    padding: 10px 0; 
+    border: none; 
+    background: none; 
+    cursor: pointer; 
+    font-size: 16px; 
+    color: #adadad; 
+    transition: 0.3s;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.tab-btn.active { 
+    color: #d81b60; 
+    border-bottom: 2px solid #d81b60; 
+}
+
+.service-row { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 14px 0; 
+    border-bottom: 1px solid #fdf2f5; 
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+.service-row span:last-child { 
+    color: #d81b60; 
+    font-weight: 600; 
+}
+
+.tab-content { 
+    display: none; 
+}
+
+.tab-content.active { 
+    display: block; 
+    animation: fadeIn 0.5s; 
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
+
+/* --- ПОДВАЛ (FOOTER) --- */
+.down {
+    background-color: var(--grey);
+    padding: 40px 20px;
+}
+
+.down__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.down__content {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.down__txt {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.down__content a {
+    color: var(--new-head_text);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   📱 АДАПТИВНЫЕ ПРАВИЛА ДЛЯ СМАРТФОНОВ (ЭКРАНЫ МЕНЕЕ 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    
+    /* Шапка перестраивается вертикально */
+    .head__container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .head__menu {
+        gap: 20px;
+    }
+    
+    .head__menu a {
+        font-size: 14px;
+    }
+    
+    .head__button {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    /* Сдвигаем главный экран вниз, чтобы не уходил под высокую шапку */
+    .vstupa {
+        grid-template-columns: 1fr;
+        padding-top: 180px;
+        padding-inline: 20px;
+        text-align: center;
+    }
+    
+    .vstupa__title {
+        font-size: 28px;
+    }
+    
+    .vstupa__video {
+        max-width: 100%;
+    }
+    
+    /* Мини-каталог выстраивается вертикально */
+    .vstupa__catalog {
+        grid-column: 1;
+        flex-direction: column;
+    }
+    
+
+    .info__Anna, .info__Tanya {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-block: 40px;
+    }
+    
+    .info__portret {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .info__name {
+        font-size: 24px;
+    }
+    
+
+    .contact__content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+
+    .geoloc__vidget {
+        height: 350px;
+    }
+    
+
+    .org__title {
+        font-size: 30px;
+    }
+    
+ 
+    .service-row {
+        font-size: 14px;
+        gap: 10px;
+    }
+    
+    .down__content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+    
+
+
+
+
+
+
+
+
